@@ -1,38 +1,38 @@
-$(document).ready(function(){
+$(document).ready(function () {
 	$('#cargaTablaContactos').load('vistas/contactos/tablaContactos.php');
 
-	$('#btnAgregarContacto').click(function(){
+	$('#btnAgregarContacto').click(function () {
 
 		if ($('#idCategoriaSelect').val() == 0) {
-			swal("Debes selecciona una categoria");
+			swal("Devi selezionare una categoria");
 			return false;
 		} else if ($('#nombre').val() == "") {
-			swal("Debes agregar el nombre");
+			swal("Devi aggiungere il nome");
 			return false;
 		}
 
 		agregarContacto();
 	});
 
-	$('#btnActualizarContacto').click(function(){
+	$('#btnActualizarContacto').click(function () {
 		actualizarContacto();
 	});
 });
 
 
-function agregarContacto(){
+function agregarContacto() {
 	$.ajax({
 		type: "POST",
 		url: "procesos/contactos/agregarContacto.php",
 		data: $('#frmAgregarContacto').serialize(),
-		success:function(respuesta) {
+		success: function (respuesta) {
 			respuesta = respuesta.trim();
 			if (respuesta == 1) {
 				$('#frmAgregarContacto')[0].reset();
 				$('#cargaTablaContactos').load('vistas/contactos/tablaContactos.php');
-				swal(":D","Se agrego con exito!","success");
+				swal("Bravo!", "Aggiunto con successo!", "success");
 			} else {
-				swal(":(","No se pudo agregar!","error");
+				swal("Buh!", "Impossibile aggiungere!", "error");
 			}
 		}
 	});
@@ -43,14 +43,14 @@ function actualizarContacto() {
 		type: "POST",
 		url: "procesos/contactos/actualizarContacto.php",
 		data: $('#frmAgregarContactoU').serialize(),
-		success:function(respuesta) {
+		success: function (respuesta) {
 			respuesta = respuesta.trim();
 			if (respuesta == 1) {
 				$('#cargaTablaContactos').load('vistas/contactos/tablaContactos.php');
 				$('#modalActualizarContacto').modal("toggle");
-				swal(":D","Se actualizo con exito!","success");
+				swal("Bravo!", "Aggiunto con successo!", "success");
 			} else {
-				swal(":(","No se pudo actualizar!","error");
+				swal("Buh!", "Impossibile aggiungere!", "error");
 			}
 		}
 	});
@@ -59,30 +59,30 @@ function actualizarContacto() {
 
 function eliminarContacto(idContacto) {
 	swal({
-		title: "¿Esta seguro de eliminar este contacto?",
-		text: "Una vez eliminado no podra ser recuperado!",
+		title: "Sei sicuro di eliminare questo contatto?",
+		text: "Una volta eliminato non può essere recuperato!",
 		icon: "warning",
 		buttons: true,
 		dangerMode: true,
 	})
-	.then((willDelete) => {
-		if (willDelete) {
-			$.ajax({
-				type:"POST",
-				data:"idContacto=" + idContacto,
-				url:"procesos/contactos/eliminarContacto.php",
-				success:function(respuesta){
-					respuesta = respuesta.trim();
-					if (respuesta == 1) {
-						$('#cargaTablaContactos').load('vistas/contactos/tablaContactos.php');
-						swal(":D","Se elimino con exito!","success");
-					} else {
-						swal(":(","No se pudo eliminar!","error");
+		.then((willDelete) => {
+			if (willDelete) {
+				$.ajax({
+					type: "POST",
+					data: "idContacto=" + idContacto,
+					url: "procesos/contactos/eliminarContacto.php",
+					success: function (respuesta) {
+						respuesta = respuesta.trim();
+						if (respuesta == 1) {
+							$('#cargaTablaContactos').load('vistas/contactos/tablaContactos.php');
+							swal("Bravo!", "Eliminato con successo!", "success");
+						} else {
+							swal("Buh!", "Impossibile eliminare!", "error");
+						}
 					}
-				}
-			});
-		} 
-	});
+				});
+			}
+		});
 }
 
 function obtenerDatosContacto(idContacto) {
@@ -90,7 +90,7 @@ function obtenerDatosContacto(idContacto) {
 		type: "POST",
 		data: "idContacto=" + idContacto,
 		url: "procesos/contactos/obtenerDatosContacto.php",
-		success:function(respuesta) {
+		success: function (respuesta) {
 			respuesta = jQuery.parseJSON(respuesta);
 			idCategoria = respuesta['id_categoria'];
 
@@ -101,7 +101,7 @@ function obtenerDatosContacto(idContacto) {
 			$('#emailU').val(respuesta['email']);
 			$('#idContactoU').val(respuesta['id_contacto']);
 			$('#categoriasIdU').load("vistas/contactos/selectCategoriasUpdate.php?idCategoria=" + idCategoria);
-			
+
 		}
 	});
 }

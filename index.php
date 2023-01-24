@@ -13,7 +13,7 @@
 	<div class="container">
 		<?php require_once "menu.php"; ?>
 
-		<div class="mt-4 p-5 bg-secondary text-white">
+		<div class="mt-4 p-5 bg-primary text-white rounded">
 			<h1 class="display-4">Rubrica per Sacel 24/01/2023</h1>
 			<hr class="my-4">
 			<h3>Rodrigo Landoni</h3>

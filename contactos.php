@@ -10,9 +10,8 @@
 </head>
 
 <body>
-	<div class="container">
+	<div class="container ">
 		<?php require_once "menu.php"; ?>
-
 		<div class="jumbotron">
 			<h1 class="display-4">Contatti</h1>
 			<button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarContacto">
