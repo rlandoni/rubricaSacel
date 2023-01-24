@@ -1,62 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Agenda de contactos web</title>
-	<link rel="icon" type="image/jpg" href="public/img/favicon.jpg">
+	<title>Inizio - Rubrica Sacel</title>
+	<link rel="icon" type="image/x-icon" href="https://img.italiaonline.it/0WO5p000003esvcGAA_logoSacelink.png">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<?php require_once "dependencias.php"; ?>
 </head>
+
 <body>
 	<div class="container">
 		<?php require_once "menu.php"; ?>
 
-		<div class="jumbotron">
-			<h1 class="display-4">Agenda de contactos con PHP y MySQL</h1>
-
-			<div class="row">
-				<div class="col-sm-6">
-					<div class="card">
-						<div class="card-body">
-							<img src="public/img/foto.png" class="img-fluid" alt="Responsive image">
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<div class="card">
-						<div class="card-body">
-							<table class="table table-hover">
-								<tr>
-									<th>
-										Agenda desarrollada en el año 2021
-									</th>
-								</tr>
-								<tr>
-									<th>
-										Hecha por Facultad autodidacta
-									</th>
-								</tr>
-								<tr>
-									<th>
-										Hecho con php y mysql
-									</th>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-
+		<div class="mt-4 p-5 bg-secondary text-white">
+			<h1 class="display-4">Rubrica per Sacel 24/01/2023</h1>
 			<hr class="my-4">
-			<p>
-				Agenda de contactos con php y mysql 
-				By Facultad Autodidacta
-			</p>
-			
+			<h3>Rodrigo Landoni</h3>
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur soluta eum laborum consequuntur laboriosam natus eos impedit error porro! Tempora nobis expedita non amet quam ipsam totam in perspiciatis et.</p>
 		</div>
+	</div>
 
 	</div>
 
-	
 </body>
+
 </html>
