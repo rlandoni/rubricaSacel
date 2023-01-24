@@ -3,7 +3,7 @@
 
 <head>
 	<title>Contatti - Rubrica Sacel </title>
-	<link rel="icon" type="image/jpg" href="public/img/favicon.jpg">
+	<link rel="icon" type="image/x-icon" href="https://img.italiaonline.it/0WO5p000003esvcGAA_logoSacelink.png">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<?php require_once "dependencias.php"; ?>
